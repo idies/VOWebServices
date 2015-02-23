@@ -1,0 +1,12 @@
+C:\Deoyani\Develope\sciserver\JS-REST-Client\ConeSearch\ConeSearch\obj\Debug\VOServices.csprojResolveAssemblyReference.cache
+C:\Deoyani\Develope\sciserver\JS-REST-Client\ConeSearch\ConeSearch\bin\VOTable.dll
+C:\Deoyani\Develope\sciserver\JS-REST-Client\ConeSearch\ConeSearch\bin\VOSevices.dll
+C:\Deoyani\Develope\sciserver\JS-REST-Client\ConeSearch\ConeSearch\bin\VOSevices.pdb
+C:\Deoyani\Develope\sciserver\JS-REST-Client\ConeSearch\ConeSearch\obj\Debug\VOSevices.dll
+C:\Deoyani\Develope\sciserver\JS-REST-Client\ConeSearch\ConeSearch\obj\Debug\VOSevices.pdb
+C:\Deoyani\Develope\sciserver\Web Services\VOServices-all\VOServices\obj\Debug\VOServices.csprojResolveAssemblyReference.cache
+C:\Deoyani\Develope\sciserver\Web Services\VOServices-all\VOServices\obj\Debug\VOSevices.dll
+C:\Deoyani\Develope\sciserver\Web Services\VOServices-all\VOServices\bin\VOSevices.dll
+C:\Deoyani\Develope\sciserver\Web Services\VOServices-all\VOServices\bin\VOSevices.pdb
+C:\Deoyani\Develope\sciserver\Web Services\VOServices-all\VOServices\bin\VOTable.dll
+C:\Deoyani\Develope\sciserver\Web Services\VOServices-all\VOServices\obj\Debug\VOSevices.pdb

@@ -1,0 +1,6 @@
+C:\Deoyani\Develope\sciserver\JS-REST-Client\ConeSearch\ConeSearch\bin\ConeSearch.dll
+C:\Deoyani\Develope\sciserver\JS-REST-Client\ConeSearch\ConeSearch\bin\ConeSearch.pdb
+C:\Deoyani\Develope\sciserver\JS-REST-Client\ConeSearch\ConeSearch\obj\Debug\ConeSearch.csprojResolveAssemblyReference.cache
+C:\Deoyani\Develope\sciserver\JS-REST-Client\ConeSearch\ConeSearch\obj\Debug\ConeSearch.dll
+C:\Deoyani\Develope\sciserver\JS-REST-Client\ConeSearch\ConeSearch\obj\Debug\ConeSearch.pdb
+C:\Deoyani\Develope\sciserver\JS-REST-Client\ConeSearch\ConeSearch\bin\VOTable.dll
