@@ -92,7 +92,21 @@ namespace VOServices
                 isNumeric = int.TryParse(value.Substring(indexDR + 2, 2), out n);
                 if (isNumeric)
                     dr = value.Substring(indexDR, 4);
+                else
+                {
+                    try
+                    {
+                        isNumeric = int.TryParse(value.Substring(indexDR + 2, 1), out n);
+
+                        if (isNumeric)
+                            dr = value.Substring(indexDR, 3);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("There is no proper Data Release mentioned in URL e.g. DR10");
+                    }
                 }
+            }
             catch (Exception e)
             {
                 try
@@ -102,9 +116,10 @@ namespace VOServices
                     if (isNumeric)
                         dr = value.Substring(indexDR, 3);
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     throw new Exception("There is no proper Data Release mentioned in URL e.g. DR10");
-               }
+                }
             }
 
             //if(n>7)

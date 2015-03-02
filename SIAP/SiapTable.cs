@@ -334,7 +334,7 @@ namespace VOServices
 
                 string[] values = new string[FIELDCOUNT];
 
-                // go off and get the fits entries
+                // go off and get the fits entries (It calls SDSS fields internally)
                 string[][] vals = setupValuesFits(ra, dec, size1, size2, bandpass);
                 // now we know if there is any real data here 
                 if (vals.Length == 0)
@@ -546,6 +546,19 @@ namespace VOServices
                 isNumeric = int.TryParse(value.Substring(indexDR + 2, 2), out n);
                 if (isNumeric)
                     dr = value.Substring(indexDR, 4);
+                else {
+                    try
+                    {
+                        isNumeric = int.TryParse(value.Substring(indexDR + 2, 1), out n);
+
+                        if (isNumeric)
+                            dr = value.Substring(indexDR, 3);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("There is no proper Data Release mentioned in URL e.g. DR10");
+                    }
+                }
             }
             catch (Exception e)
             {
@@ -581,8 +594,9 @@ namespace VOServices
             //{
             //    throw new Exception("There is no proper Data Release mentioned in URL e.g. DR10");
             //}
+            
             string currentUri = HttpContext.Current.Request.Url.AbsoluteUri.ToLower();
-            sdssFieldsUrl = currentUri.Substring(0, currentUri.IndexOf("dr")) +dr+ "Fields/sdssFields.asmx";
+            sdssFieldsUrl = currentUri.Substring(0, currentUri.IndexOf("dr")) +dr+ "Fields/sdssFields.asmx";            
             return dr;
         }
     }
