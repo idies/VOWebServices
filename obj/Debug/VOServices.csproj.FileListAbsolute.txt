@@ -16,3 +16,9 @@ C:\Deoyani\Develope\sciserver\Web Services\VOServices-all\VOWebServices\bin\VOTa
 C:\Deoyani\Develope\sciserver\Web Services\VOServices-all\VOWebServices\obj\Debug\VOServices.csprojResolveAssemblyReference.cache
 C:\Deoyani\Develope\sciserver\Web Services\VOServices-all\VOWebServices\obj\Debug\VOSevices.dll
 C:\Deoyani\Develope\sciserver\Web Services\VOServices-all\VOWebServices\obj\Debug\VOSevices.pdb
+C:\Deoyani\Develope\sciserver\VOWebServices\bin\VOSevices.dll
+C:\Deoyani\Develope\sciserver\VOWebServices\bin\VOSevices.pdb
+C:\Deoyani\Develope\sciserver\VOWebServices\bin\VOTable.dll
+C:\Deoyani\Develope\sciserver\VOWebServices\obj\Debug\VOServices.csprojResolveAssemblyReference.cache
+C:\Deoyani\Develope\sciserver\VOWebServices\obj\Debug\VOSevices.dll
+C:\Deoyani\Develope\sciserver\VOWebServices\obj\Debug\VOSevices.pdb

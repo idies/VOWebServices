@@ -24,7 +24,7 @@ namespace VOServices
 		 + "Send comments to <b>Deoyani Nandrekar-Heinis</b> -- deoyani[at]pha.jhu.edu")]
 	public class sdssFields : System.Web.Services.WebService
 	{
-        string cmdTemplate,  CJobsPasswd, dataRelease, cmdTemplate2; //urlPrefix,;
+        string cmdTemplate,  CJobsPasswd, dataRelease, cmdTemplate2,latestRelease; //urlPrefix,;
         long CJobsWSID;
         int n = 0; //sdss dr release number
 
@@ -40,7 +40,7 @@ namespace VOServices
             CJobsPasswd = ConfigurationSettings.AppSettings["CJobsPWD"];
 			cmdTemplate = ConfigurationSettings.AppSettings["CmdTemplate"];
             cmdTemplate2 = ConfigurationSettings.AppSettings["CmdTemplate2"];
-			
+            latestRelease = ConfigurationSettings.AppSettings["LatestRelease"]; 
             dataRelease = getDataRelease();            
 		}
 
@@ -80,6 +80,10 @@ namespace VOServices
             int  indexDR ;    string dr = "";
             try
             {
+                if(value.Equals("SIAP")){
+                    dr = latestRelease;
+                    return dr;
+                }
                 indexDR = value.IndexOf("DR");
             }catch(Exception e) {
                 throw new InvalidOperationException("Add DataRelease in URL you are querying e.g DR10");

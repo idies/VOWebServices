@@ -23,7 +23,7 @@ namespace VOServices
     public class SiapTable : VOTABLE
     {
         protected bool dobandpass = false, test;
-        private string  SDSSgetImage, sdssFieldsUrl;
+        private string  SDSSgetImage, sdssFieldsUrl,latestRelease;
         static public int FIELDCOUNT = 16;
        
         private double pixPerDeg = 9088.0;
@@ -34,8 +34,10 @@ namespace VOServices
         
         public SiapTable()
         {
-            datarelease = getDataRelease();
             SDSSgetImage = ConfigurationSettings.AppSettings["UrlSdssGetJpeg"];
+            latestRelease = ConfigurationSettings.AppSettings["LatestRelease"];
+            datarelease = getDataRelease();
+           
             if (null == SDSSgetImage)
             {
                 throw new Exception(" Please set UrlSdssGetJpeg in web.config");
@@ -533,11 +535,13 @@ namespace VOServices
             int indexDR; string dr = "";
             try
             {
-                indexDR = value.IndexOf("DR");                
+                if (value.Equals("SIAP")) dr = latestRelease;
+                indexDR = value.IndexOf("DR");
+                
             }
             catch (Exception e)
             {
-                throw new InvalidOperationException("Add DataRelease in URL you are querying e.g DR10");
+                    throw new InvalidOperationException("Add DataRelease in URL you are querying e.g DR10");
             }
 
             bool isNumeric = false;
@@ -570,8 +574,8 @@ namespace VOServices
                         dr = value.Substring(indexDR, 3);
                 }
                 catch (Exception ex)
-                {
-                    throw new Exception("There is no proper Data Release mentioned in URL e.g. DR10");
+                {                    
+                        throw new Exception("There is no proper Data Release mentioned in URL e.g. DR10");
                 }
             }
             //try
@@ -594,9 +598,21 @@ namespace VOServices
             //{
             //    throw new Exception("There is no proper Data Release mentioned in URL e.g. DR10");
             //}
-            
             string currentUri = HttpContext.Current.Request.Url.AbsoluteUri.ToLower();
-            sdssFieldsUrl = currentUri.Substring(0, currentUri.IndexOf("dr")) +dr+ "Fields/sdssFields.asmx";            
+            string fieldsurl = "";
+            try
+            {
+                if (indexDR < 0 && value.ToUpper().Equals("SIAP"))
+                {
+                    fieldsurl = currentUri.Substring(0, currentUri.IndexOf("siap"));
+                    dr = latestRelease;
+                }
+                else
+                    fieldsurl = currentUri.Substring(0, currentUri.IndexOf("dr"));
+            }
+            catch (Exception exp)
+            { }
+            sdssFieldsUrl = fieldsurl +dr+ "Fields/sdssFields.asmx";            
             return dr;
         }
     }
